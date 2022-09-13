@@ -1,0 +1,1041 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*************************************************************************************** HEADER  ************************************************************************************************************/
+.imgPdf:hover{ 
+    transform: scale(1.2);
+}
+
+.offcanvas {
+    width: fit-content !important;
+    background: linear-gradient(200deg, rgb(248, 250, 248), rgba(212, 238, 238, 0.548));
+}
+
+.btnHover:hover {
+    background-color: #fd7d1493;
+    scale: 1.1;
+    transform: scale(1.05);
+}
+
+
+.btnNavLeft {
+    border: 0.1px;
+    background-color: #fd7d1481;
+    width: 15vw;
+    border-radius: 2px;
+    height: 6vh;
+    color: rgb(248, 250, 248);
+}
+
+.btnNavLeft:hover {
+    border-left: solid 10px #fd7d14;
+    color: white;
+    transform: scale(1.1);
+
+}
+
+.active {
+    color: white !important;
+    font-size: larger;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.buttonLogOut { 
+    transform: translateX(60px);
+}
+
+.disableSection{
+    pointer-events: none;
+    opacity: 0.4;
+}
+/*************************************************************************************** MAIN  ************************************************************************************************************/
+
+.accountBody {
+    width: 80vw;
+}
+
+.blueBlock {
+    height: 15vh;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(0, 193, 255);
+    background: radial-gradient(circle, rgba(0, 193, 255, 1) 0%, rgba(58, 143, 170, 1) 85%);
+}
+
+.blueBlockCreateCards {
+    height: 15vh;
+    width: 80vw !important;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(0, 193, 255);
+    background: radial-gradient(circle, rgba(0, 193, 255, 1) 0%, rgba(58, 143, 170, 1) 85%);
+}
+
+.bodyGray {
+    background-color: rgba(128, 128, 128, 0.103);
+    min-height: 140vh;
+    align-items: center;
+}
+
+.bodyGray2 { 
+    min-height: auto;
+}
+
+.buttonTransfer {
+    background-color: rgba(11, 183, 238, 255);
+    border: solid 1px gray;
+}
+
+.buttonTransfer:hover {
+    background-color: #fd7e14;
+    transform: scale(1.2);
+    border: solid black 1px;
+    
+}
+
+.accountCard {
+    margin-left: 8px;
+    width: 35vw;
+}
+
+.accountCardDetails {
+    width: 45vw;
+}
+
+.accountCard:hover {
+    background-color: rgba(128, 128, 128, 0.111);
+    transform: translateY(-5px);
+}
+
+.btnColor {
+    background-color: #fd7d14b1;
+    border-radius: 180px;
+    border: none;
+}
+
+.btnColor:hover {
+    background-color: #fd7e14;
+    font-weight: bolder;
+}
+
+.watchColor {
+    filter: opacity(0.5) drop-shadow(0 0 0 white);
+    transform: translateX(-20px);
+}
+
+.boxSize2 {
+    border: solid 3px rgba(255, 255, 255, 0.815);
+    width: 30vw;
+    
+    background: rgb(41, 98, 117);
+    background: linear-gradient(90deg, rgba(41, 98, 117, 1) 0%, rgba(23, 157, 201, 1) 100%);
+    /* background-image: linear-gradient(to right bottom, #3595b2, #3595b2, #ffffffbe, #3594b2fe, #3595b2); */
+
+}
+
+.clientDetailsImg {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 360px !important;
+}
+
+.operationBox {
+    margin-top: 5px;
+    border: solid rgba(255, 255, 255, 0.658);
+    background-color: rgba(255, 255, 255, 0.214);
+    width: 15vw;
+}
+
+.balanceBox {
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.214);
+    border-top: solid rgba(255, 255, 255, 0.658);
+    border-bottom: solid rgba(255, 255, 255, 0.658);
+    width: 15vw;
+}
+
+.linea {
+    height: 70px;
+    border-left: solid 0.5px rgba(0, 0, 0, 0.188);
+}
+
+.tablesStyle{ 
+    background-color: rgba(128, 128, 128, 0.671);
+    min-width: 60vw;
+    border: solid rgba(0, 0, 0, 0.719) 0.5px;
+    background-image:url(./images/fondoTarjetas\ -\ desenfocada.jpg)
+}
+
+
+
+/*************************************************************************************** CREDIT CARD  ******************************************************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.title {
+    margin-bottom: 30px;
+    color: #162969;
+}
+
+.card {
+    width: 320px;
+    height: 190px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+}
+
+.card2 {
+    margin: 20px;
+    height: 150px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    background-color: white;
+}
+.imgFondoo {
+    background-image: url(./images/accountsImage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: fit-content;
+    padding-bottom: 60vh;
+}
+.imgFondooCreateCards {
+    background-image: url(./images/imgFondoCreateCards.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: fit-content;
+    padding-bottom: 60vh;
+}
+.card3 {
+    margin: 20px;
+    border: solid 3px #3494b18b;
+    width: 40vw;
+    padding: 20px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    background-color: white;
+    background-image: url(./images/accountsImage-Desenfocado.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.card__part {
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #070000, #fa616e, #f65871, #f15075, #ec4879);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__partGold {
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #ac7914fe, #ac7914fe, #ac7914fe, #ac7914fe, #ac7914fe);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__partSilver {
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #848584fe, #848584fe, #848584fe, #848584fe, #848584fe);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__partTitanium {
+    box-shadow: 1px 1px;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #2f2f2f, #2f2f2f, #2f2f2f, #2f2f2f, #2f2f2f);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__front {
+    padding: 18px;
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+}
+
+.card__back {
+    padding: 18px 0;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+    margin-top: 5px;
+    height: 38px;
+    background-color: #303030;
+}
+
+.card__logo {
+    height: 30 px;
+}
+
+.card__front-logo {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.card__square {
+    border-radius: 5px;
+    height: 30px;
+}
+
+.card_numer {
+    display: block;
+    width: 100%;
+    word-spacing: 4px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card__space-75 {
+    width: 75%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 25%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card__back-content {
+    padding: 15px 15px 0;
+}
+
+.card__secret--last {
+    color: #303030;
+    text-align: right;
+    margin: 0;
+    font-size: 14px;
+}
+
+.card__secret {
+    padding: 5px 12px;
+    background-color: #fff;
+    position: relative;
+}
+
+.card__secret:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    height: calc(100% + 6px);
+    width: calc(100% - 42px);
+    border-radius: 4px;
+    background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+.card__back-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.card__back-square {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.card:hover .card__front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+
+}
+
+.card:hover .card__back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+
+/***************************************************************************************  cards.html ******************************************************************************************/
+
+.cardFondo {
+    background-color: #07000000;
+    border: none;
+}
+
+.mainCard {
+    background-image: url(./images/fondoTarjetas.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: fit-content;
+    padding-bottom: 10vh;
+    min-height: 100vh;
+}
+
+.boxFather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px #3494b18b;
+    border-radius: 10px;
+    margin: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: rgba(128, 128, 128, 0.563);
+    background-image: url(./images/fondoTarjetas\ -\ desenfocada.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.boxFather2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px #3494b18b;
+    border-radius: 10px;
+    margin: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: rgba(128, 128, 128, 0.563);
+    background-image: url(./images/fondoTarjetas\ -\ desenfocada.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.nightButtonCreateCards { 
+    transform: translateX(80px) !important;
+
+}
+
+.nightButtonAplicationLoan { 
+    transform: translateX(80px) !important;
+
+}
+
+.boxFather2CreateCards {
+
+    background-image: url(./images/imgFondoCreateCardsDesenfocado.jpg);
+
+}
+
+.boxSun1 {
+    height: fit-content;
+    display: flex;
+    width: 30vw;
+    padding: 20px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boxSun11 { 
+    margin-left: 30px !important;
+}
+
+.boxSun2 {
+    height: fit-content;
+    display: flex;
+    width: 30vw;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: column;
+}
+
+/***************************************************************************************  DARK MODE ******************************************************************************************/
+
+body.darkmode { 
+    background-color: rgb(32, 32, 44);
+    color: white;
+}
+
+.darkmode header { 
+    background-color: rgb(12, 12, 12) !important;
+    color: white;
+}
+
+
+.darkmode button{ 
+
+    color: white !important;
+}
+
+
+.darkmode button:hover{ 
+    background-color: white;
+    color: black;
+}
+
+.darkmode main div h3 { 
+    color: rgba(255, 255, 255, 0.381);
+}
+
+.darkmode main div div div div { 
+    background-color: rgba(255, 255, 255, 0.381);
+}
+
+.darkmode main div div div div div div{ 
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.darkmode header nav{ 
+    background-color: #2a2a35fe!important;
+
+}
+
+.nightButton { 
+    background-color: #2a2a35c3;
+    color: white;
+    padding: 2PX;
+    transform: translateX(150px); 
+}
+
+.nightButtonCreateCard{
+    transform: translateX(80px) !important;
+}
+
+.btnCreateAccount { 
+    width: fit-content;
+    height: fit-content;
+    background-color: #fd7d14b1;
+    border: solid black 0.5px;
+}
+
+.buttonSwitch {
+    color: orangered;
+    font-weight: bolder;
+}
+.buttonSwitch:hover {
+   
+    transform: translateX(-40px) scale(1.2);
+    margin-top: 05px;
+    color: black;
+    
+}
+
+.btnCreateAccount:hover{
+    background-color: #fd7d14b1;
+    color: #070000;
+    border: solid white 2px;
+    transform: scale(1.05);
+
+}
+.nightButton:hover { 
+    background-color: white;
+    color: #2a2a35fe;
+   
+}
+
+.wspButton{ 
+    transform: translateX(200px);
+}
+
+.dropdownStyle{ 
+    background-color: #1ea6d4a8;
+    font-weight: bolder;
+    color: white;
+}
+
+.btn-wsp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    bottom: 85px;
+    right: 80px; 
+    background: #0df055c4;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .btn-wsp:hover {
+    text-decoration: none;
+    color: #0df053;
+    color: black;
+  }
+/*********************************************************************************  LOAN APLICATION  *****************************************************************/
+
+.loanAplicationBody{ 
+    min-width: 80vw !important;
+}
+
+.btnAplicationLoan{ 
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    border: solid #fff 0.5px;
+    color: #26a0c7fe !important;
+    font-weight: bolder;
+}
+
+.btnAplicationLoan:hover { 
+    background-color: #269fc777;
+    border: none;
+}
+
+.imgAdminLoan {
+    width: 100%;
+    height: 800px;
+}
+
+
+
+/***************************************************************************************  RESPONSIVE  ************************************************************************/
+
+
+@media (min-width: 1023px) and (max-width: 1024px) { 
+
+    .bodyGray{ 
+        
+     flex-wrap: no-wrap;
+    }
+
+    
+    .myChart { 
+        
+      transform: scale(.9);
+    }
+
+    .nightButtonCard{ 
+        margin-right: 70px;
+       }
+
+    .btn-wsp { 
+        transform: translateX(65px);
+    }
+    .nightButton { 
+        transform: translate(120px, 0px);
+        width: fit-content;
+        padding: 3px;
+    }
+
+ 
+
+
+}
+
+@media  (min-width: 766px) and (max-width: 1023px) { 
+
+    .cardResponsive{ 
+     
+        transform: scale(.5);
+    }
+
+    .responsiveMenuNav2{ 
+        flex-direction: column;
+        align-items: flex-start !important  ;
+    }
+     
+    .bodyGray{ 
+     flex-wrap: no-wrap;
+    }
+    
+    .myChart { 
+        
+      transform: scale(.9);
+    }
+
+    .nightButtonCard{ 
+        margin-right: 70px;
+       }
+
+    .btn-wsp { 
+        transform: translateX(65px);
+    }
+    .nightButton { 
+        transform: translate(4px, 00px) !important;
+        width: fit-content;
+        padding: 3px;
+    }
+
+    .nightButton { 
+       transform: translate(40px , 40px) !important;
+        width: fit-content;
+        padding: 3px;
+       
+    }
+
+    .btnHover { 
+        transform: translate(-60px,80px) !important;
+    }
+
+    .buttonLogOut { 
+        transform: translate(20px,30px) !important;
+
+    }
+    #myChart { 
+        padding: 0px;
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .boxFather2 { 
+        flex-direction: column;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 0px;
+        margin: 10px;
+        justify-content: end;
+        align-items: center;
+        margin-left: 40px;
+ 
+}   
+
+}
+
+
+@media screen and (max-width: 768px) { 
+
+    .accountBody{ 
+        width: fit-content;
+        padding-left: 15px;
+        padding-right: 35px;
+     
+    }
+
+    .container2{
+       flex-wrap: wrap;
+       flex-direction: column;
+       
+    }
+    .mainCard {
+        width: fit-content;
+        justify-content: center;
+        align-items:center ;
+    }
+
+    .divResponsive{ 
+        flex-direction: column !important;
+        padding: 30px;
+    }
+
+
+    #myChart { 
+        padding: 20px;
+
+    }
+
+    .btnHover { 
+        transform: translate(30px, 30px) !important;
+    }
+
+    .headerCreateCard { 
+        height: fit-content;
+      }
+    
+    .nightButtonNewCard {
+        transform: translateY(-221px) !important;
+    }
+
+    .sizeResponsive{ 
+        width: fit-content !important;
+
+    }
+
+   .blueBlockCreateCards { 
+    width: 120vw !important;
+   }
+    .buttonLogOut { 
+        transform: translate(180px,-20px) !important;
+
+    }
+
+    .nightButton { 
+        transform: translate(140px,-60px) !important; 
+    }
+
+    .imgResponsive { 
+        display: none;
+    }
+    .nightButton { 
+        transform: translate(150px, -20px);
+        width: fit-content;
+        padding: 3px;
+    }
+
+    .btnHover:hover {
+     
+        transform: translate(20px,10px)
+    }
+
+    .btnNavLeft {
+        width: 150px;
+        height: fit-content;
+    }
+
+    .logoResponsive {
+        flex-wrap: wrap;
+        transform: translateX(-10px);
+     
+    }
+
+    .blueBlock {
+        padding-top: -40px;
+    }
+
+    .responsiveColum{ 
+    transform: scale(.9);
+        flex-direction: column;
+        
+        align-items: center;
+    }
+
+    .responsiveCards { 
+  
+      order: 15;
+    }
+
+    .balanceBox {
+        width: 200px;
+
+        
+    }
+
+    .card2 {
+        transform: scale(.8);
+        width: 450px;
+    }
+
+    .card2:hover {
+        transform: scale(.8);
+        width: 450px;
+    }
+
+    .responsiveSelectMenu { 
+        flex-direction: column;
+        
+    }
+
+    .responsiveSelectMenu button{ 
+        margin-bottom: 10px;
+        
+    }
+
+    .operationBox {
+        width: 200px;
+    }
+
+    .boxSize2 { 
+        order: 1;
+        width: fit-content;
+        margin: 5px;
+    }
+     .btn-wsp {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        bottom: 35px;
+        right: 30px; 
+        background-color: rgba(255, 0, 0, 0);
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px; 
+      }  
+
+      .boxFather2 { 
+        flex-direction: column;
+        width: 380px;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 0px;
+        margin: 10px;
+        justify-content: end;
+        align-items: center;
+        margin-left: 40px;
+      }
+
+      .boxFather2CreateCards { 
+        flex-direction: column;
+        width: 380px;
+        margin-top: 20px;
+        margin-left: 80px !important;
+        margin-right: 0px;
+        margin: 10px;
+        justify-content: end;
+        align-items: center;
+        margin-left: 40px;
+      }
+      
+      .boxFather { 
+        flex-direction: column;
+        width: 400px;
+       
+      }
+
+      .boxSun2 { 
+        width: fit-content;
+        text-align: center;
+
+      }
+
+      .navbar { 
+        flex-direction: column;
+        height: fit-content !important;
+      }
+
+      .mainCard { 
+        width: fit-content;
+      }
+
+      .menuCard{ 
+        transform: translateX(-150px);
+      }
+
+      .nightButtonCard{ 
+       margin-top: 05px;
+      }
+      .cardsHeader{
+      width: auto;
+      }
+      .responsiveMenuNav{ 
+        display: flex;
+        flex-direction: column !;
+        background-color: red;
+      }
+      .responsiveTitle{ 
+        transform: translateX(40px);
+      }
+
+      .responsiveDiv { 
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+      .responsiveTitleLoanAplication { 
+        margin-right: 100px;
+      }
+
+   
+}

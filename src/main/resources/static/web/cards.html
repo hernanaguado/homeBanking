@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Bank</title>
+     <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- GOOGLE FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!--  FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--  ICO -->
+    <link rel="shortcut icon" href="./images/Logo-Banco-Mundial.png" type="image/x-icon">
+    <!--  ANIMATE.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--  FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--  CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body class="cardsHeader">
+    <div id="app">
+        <header >
+            <nav class="navbar navbar-expand-lg bg-light d-flex ">
+                <div class="container-fluid responsiveTitle">
+                    <div class="ps-5 ">
+                        <img src="./images/Logo-Banco-Mundial.png" alt="" class="imgResponsive">
+                        <a class="navbar-brand fw-bolder ms-3" href="./accounts.html" style="color: #fd7e14;">International
+                            Bank | HomeBanking</a>
+                    </div>
+                </div>
+                <div class="justify-content-around" id="navbarNavDropdown">
+                    <ul class="navbar-nav menuCard">
+                        <button class="btn fw-bolder btnHover" style="color: #fd7e14;" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                            aria-controls="offcanvasWithBothOptions">Menu</button>
+
+                            <a href="" @click="logOut" class="buttonLogOut"><img src="./images/logOut.png" alt=""></a>
+
+                    </ul>
+                </div>
+                <button id="bdark" class="nightButton d-flex nightButtonCard">
+                    <span><i class="fas fa-sun pe-4"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+            </nav>
+
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header d-flex justify-content-end">
+                    <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <ul class="d-flex flex-column ">
+                    <a href="./index.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">Home</li>
+                    </a>
+                    <a href="./accounts.html" class="text-decoration-none text-dark ">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder  d-flex align-items-center">Account 
+                        </li>
+                    </a>
+                    <a href="./loan-application.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder  d-flex align-items-center">Loans</li>
+                    </a>
+                    <a href="./create-cards.html" class="text-decoration-none text-dark active">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">Cards</li>
+                    </a>
+                    <a href="./cards.html" class="text-decoration-none text-dark active">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">Cards details</li>
+                    </a>
+                    
+
+                    <div class="mt-5 d-flex logoResponsive">
+                        <h4 class="fw-bolder" style="color: #0782abfe">International Bank</h4>
+                        <img src="./images/Logo-Banco-Mundial.png" alt="" class="ps-2">
+                    </div>
+                </ul>
+            </div>
+
+        </header>
+
+        <main class="mainCard">
+            <div class="blueBlock d-flex">
+                <div class="d-flex align-items-center">
+                    <div class="fw-bolder text-light">
+                        <h1 class="text-center fw-bolder">My cards</h1>                       
+                    </div>
+
+                    <a href="./create-cards.html"><button  type="button" class="btn btn-warning btnCreateAccount ms-5">Create a card</button></a>
+                    <button type="button" class="btn btn-primary btnCreateAccount fw-bolder text-dark ms-4"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Delete an account
+                    </button>
+                </div>
+            </div>
+            <div class="backImage">   
+                
+                <div class="boxFather2 " v-for="card in CardsFilterByStatus">
+                    <div class="boxSun1">
+                        <div>
+                            <div class="card cardFondo">
+
+                                <div class="card__front"
+                                    :class="{ 'card__partGold' : card.cardColor == 'GOLD' , 'card__partSilver' : card.cardColor == 'SILVER' , 'card__partTitanium' : card.cardColor == 'TITANIUM' }">
+
+                                    <div class="d-flex">
+
+                                        <img class="card__front-square card__square"
+                                            src="./images/card_chip_silver.ico">
+                                        <p class="ps-2 fw-bolder text-light">{{card.cardType}}</p>
+                                    </div>
+                                    <img class="card__front-logo card__logo" src="./images/visa.png">
+                                    <p class="card_numer text-black fw-bolder">{{card.number}}</p>
+                                    <div class="card__space-75">
+                                        <span class="card__label text-black fw-bolder">Card Holder</span>
+                                        <p class="card__info text-black fw-bolder">{{card.cardHolder}}</p>
+                                    </div>
+                                    <div class="card__space-25">
+                                        <span class="card__label text-black fw-bolder">Expires</span>
+                                        <p class="card__info text-black fw-bolder">{{newDate2(card.thruDate)}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="card__back"
+                                    :class="{ 'card__partGold' : card.cardColor == 'GOLD' , 'card__partSilver' : card.cardColor == 'SILVER', 'card__partTitanium' : card.cardColor == 'TITANIUM' }">
+                                    <div class="card__black-line"></div>
+                                    <div class="card__back-content">
+                                        <div class="card__secret">
+                                            <p class="card__secret--last text-black fw-bolder">{{card.cvv}}</p>
+                                        </div>
+                                        <img class="card__back-square card__square" src="./images/card_chip_silver.ico">
+                                        <img class="card__back-logo card__logo" src="./images/visa.png">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxSun2" v-if="dateNow >= newDate3(card.thruDate)">
+                        <h3 class="fw-bolder text-danger">Card Expired</h3>                  
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > Card Holder: {{card.cardHolder}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > Card Number: {{card.number}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > CVV Number: {{card.cvv}} </h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > Date of issue:{{" " + newDate(card.fromDate)}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > Date of Expiry:{{" " + newDate(card.thruDate)}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger"> Card Type:{{" " + card.cardType}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-danger" > Card Color:{{" " + card.cardColor}}</h6>                        
+                    </div>
+                    <div class="boxSun2" v-else-if="dateNow <= newDate3(card.thruDate)">
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">Card Holder:</span>
+                            {{card.cardHolder}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">Card Number:</span>
+                            {{card.number}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">CVV Number:</span> {{card.cvv}}
+                        </h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">Date of issue:</span>{{" " +
+                            newDate(card.fromDate)}}
+                        </h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">Date of Expiry:</span>{{" " +
+                            newDate(card.thruDate)}}
+                        </h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light"> <span style="color: #0782abfe; " style="background-color: #0782ab;">Card Type:</span>{{" " +
+                            card.cardType}}</h6>
+                        <h6 class="m-3 fs-5 fw-bolder text-light" > <span style="color: #0782abfe;">Card Color:</span>{{" " +
+                            card.cardColor}}</h6>                        
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog" style="width: fit-content !important;">
+                    <div class="modal-content">
+                        <div class="modal-header text-light" style="background-color: #289ec3fe;">
+                            <h5 class="modal-title  fw-bolder" id="exampleModalLabel">Select an account to delete</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class=" modal-body " v-for="card in CardsFilterByStatus">
+    
+                            <div class="card text-bg-light mb-3" style="max-width: 18rem; height: fit-content;">
+                                <div class="card-header fw-bolder">
+                                    <h5 class="text-start">Card number:</h5>
+                                    <h5 class="text-end fw-bolder">{{" "+card.number}}</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6>Type Card: <span class="fw-bolder">{{card.cardType}}</span> </h6>
+                                    <h6>Color Card: <span class="fw-bolder">{{card.cardColor}}</span> </h6> 
+                                    <h6>From date: <span class="fw-bolder">{{newDate(card.fromDate)}}</span> </h6>   
+                                    <h6>Thru date: <span class="fw-bolder">{{newDate(card.thruDate)}}</span> </h6>    
+                                                      
+                                </div>
+                            </div>
+                            <div class="form-check">
+                                <input @click="selectAccount" v-model="accountNumber" class="form-check-input" type="radio" :value="card.number" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Select account: <span class="fw-bolder">{{card.number}}</span> 
+                                </label> 
+                            </div>
+    
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button @click="deleteCard" type="button" class="btn btn-primary">Delete card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer class="d-flex justify-content-end ">
+           
+        </footer>
+
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./cards.js"></script>
+          <!-- SWEAT ALERT -->
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
+

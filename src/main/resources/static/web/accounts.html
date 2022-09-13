@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Bank</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- GOOGLE FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!--  FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--  ICO -->
+    <link rel="shortcut icon" href="./images/Logo-Banco-Mundial.png" type="image/x-icon">
+    <!--  ANIMATE.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--  FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--  CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light responsiveMenuNav">
+                <div class="container-fluid responsiveMenuNav2">
+                    <div class="ps-5 animate__animated animate__backInLeft">
+                        <img src="./images/Logo-Banco-Mundial.png" alt="" class="">
+                        <a class="navbar-brand fw-bolder ms-3 " href="#" style="color: #fd7e14;">International
+                            Bank | HomeBanking</a>
+                    </div>
+                    <div class="justify-content-around" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <button class="btn fw-bolder btnHover" style="color: #fd7e14;" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                                aria-controls="offcanvasWithBothOptions">Menu</button>
+
+                            <a href="" @click="logOut" class="buttonLogOut"><img src="./images/logOut.png" alt=""></a>
+                        </ul>
+                    </div>
+                </div>
+                <button id="bdark" class="nightButton d-flex">
+                    <span><i class="fas fa-sun pe-4"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+            </nav>
+
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header d-flex justify-content-end">
+                    <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <ul class="d-flex flex-column ">
+                    <a href="./index.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">Home</li>
+                    </a>
+                    <a href="./accounts.html" class="text-decoration-none text-dark active">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder  d-flex align-items-center">Account
+                        </li>
+                    </a>
+                    <a href="./loan-application.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder  d-flex align-items-center">Loans</li>
+                    </a>
+                    <a href="./create-cards.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">New card</li>
+                    </a>
+                    <a href="./cards.html" class="text-decoration-none text-dark">
+                        <li class="mb-5 m-3 btnNavLeft ps-4 fw-bolder d-flex align-items-center">Cards details</li>
+                    </a>
+                    
+                    <div class="mt-5 d-flex logoResponsive">
+                        <h4 class="fw-bolder" style="color: #0782abfe">International Bank</h4>
+                        <img src="./images/Logo-Banco-Mundial.png" alt="" class="ps-2">
+                    </div>
+                </ul>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="blueBlock d-flex">
+                <div class="d-flex">
+                    <img src="./images/watch.png" alt="" class="watchColor">
+                    <div class="fw-bolder text-light">
+                        <h3 class="fw-bolder">Welcome back, {{clients.firstName}}!</h3>
+                        <h6 class="text-center">Last conection: 07/08/2022</h6>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bodyGray imgFondo">
+                <div class="d-flex align-items-center responsiveSelectMenu">
+                    <h3 class=" p-4 fw-bolder">My Accounts</h3>
+
+                    <button type="button" class="btn btn-warning btnCreateAccount ms-4 fw-bolder" data-bs-toggle="modal"
+                        data-bs-target="#createAccount">Create account</button>
+
+                        <a href="./transfer.html"><button type="button" class="btn btn-warning btnCreateAccount ms-4 fw-bolder">Transactions</button></a>
+                        <button type="button" class="btn btn-primary btnCreateAccount fw-bolder text-dark ms-4"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Delete an account
+                        </button>     
+                                 
+                </div>
+                <div class="d-flex justify-content-evenly responsiveColum">
+                    <div class="flex-column responsiveCards">
+                        <div class="card2 accountCard mt-4 d-flex " v-for="account in accountsFilterByStatus">
+                            <div class="card-body d-flex justify-content-around align-items-center">
+                                <div>
+                                    <h5 class="fw-bold">Account Number</h5>
+                                    <h6 class="text-center">{{account.number}}</h6>
+                                </div>
+                                <div class="linea"></div>
+                                <div>
+                                    <h5 class="text-center"> <span class="fw-bold">$</span> {{account.balance}},00</h5>
+                                </div>
+                                <div class="linea"></div>
+                                <div>
+                                    <a :href="'./account.html?id='+account.id" class="border-dark btn btnColor ">Account
+                                        Details</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h3 class="p-4 fw-bolder responsiveTitle">My Loans</h3>
+                        <div class="card2 accountCard mt-4 d-flex " v-for="loan in loans">
+                            <div class="card-body d-flex justify-content-around align-items-center">
+                                <div>
+                                    <h6 class="text-center"> <span class="fw-bold">Loan type:</span> {{" "+loan.name}}</h6>
+                                    <h6 class="text-center"> <span class="fw-bold">Current installments:</span> {{"1 of " + loan.payments}}</h6>
+                                </div>
+                                <div class="linea"></div>
+                                <div>
+                                    <h6> <span class="fw-bold text-center">Number of installments:</span>{{" "+loan.payments}}</h6>
+                                    <h6> <span class="fw-bold text-center">Loan amount:</span>{{" " +moneyFormat(+loan.amount)}}</h6>
+                                    <h6> <span class="fw-bold text-center">Installments amount:</span>{{" " +moneyFormat(loan.amount/loan.payments)}}</h6>                                 
+                                </div>
+                                
+                                
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <section class="d-flex flex-column  boxSize2 align-items-center">
+                        <div class="">
+                            <img src="./images/person_7.jpg" alt="" class="clientDetailsImg">
+                            <h3 class="text-light text-center">{{clients.firstName + " "+ clients.lastName}}</h3>
+                            <h5 class="text-light">{{clients.email}}</h5>
+                        </div>
+                        <div class="d-flex align-items-center responsiveSize">
+                            <div class="operationBox">
+                                <h6 class="text-center text-light">Transactions</h6>
+                                <h4 class="text-center text-light">{{totalTransactions}}</h4>
+                            </div>
+                            <div class="balanceBox">
+                                <h6 class="text-center text-light">Total Account Balance</h6>
+                                <h4
+                                    :class="totalBalance > '0' ? 'text-success text-center fw-bolder' : 'text-danger text-center fw-bolder'">
+                                    {{moneyFormat(totalBalance)}}</h4>
+                            </div>
+                        </div>
+                        <caption class="mt-5 myChart">
+                            <canvas id="myChart" width="400" height="400"></canvas>
+                        </caption>
+                    </section>
+
+                </div>
+            </div>
+
+            <footer class="d-flex justify-content-end ">
+             
+            </footer>
+        </main>
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width: fit-content !important;">
+                <div class="modal-content">
+                    <div class="modal-header text-light" style="background-color: #289ec3fe;">
+                        <h5 class="modal-title  fw-bolder" id="exampleModalLabel">Select an account to delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class=" modal-body " v-for="account in accountsFilterByStatus">
+
+                        <div class="card text-bg-light mb-3" style="max-width: 18rem; height: fit-content;">
+                            <div class="card-header fw-bolder">Account number:{{" "+account.number}}</div>
+                            <div class="card-body">
+                                <h5>Current Balance:</h5>
+                                <h5 class="text-end fw-bolder">${{" "+account.balance}},00</h5>
+                                <h5>Creation date:</h5>
+                                <h5 class="text-end fw-bolder">{{newDate(account.creationDate)}} </h5>
+
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input @click="selectAccount" v-model="accountNumber" class="form-check-input" type="radio"
+                                :value="account.number" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Select account : <span class="fw-bolder">{{" "+account.number}}</span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button @click="deleteAccount" type="button" class="btn btn-primary">Delete changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="createAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header " style="background-color: #19abd9fe; color: rgb(255, 255, 255);">
+                        <h5 class="modal-title text-center fw-bolder" id="exampleModalLabel">Which type of account do
+                            you want?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center">
+                        <button type="button" class="btn btn-warning btnCreateAccount ms-4 fw-bolder"
+                            @click="selectAccountType('SAVING')">Saving Account</button>
+                        <button type="button" class="btn btn-warning btnCreateAccount ms-4 fw-bolder"
+                            @click="selectAccountType('CURRENT')">Current Account</button>
+                    </div>
+                    <div v-if='accountType== "" '>
+
+                        <h3 class="text-center fw-bolder">General Information</h3>
+                        <p class="text-center pe-4 ps-4 pb-4 pt-2 fw-bold" style="color: #19abd9fe;">A bank account is a
+                            financial account maintained by a bank or other financial institution in which the financial
+                            transactions between the bank and a customer are recorded. Each financial institution sets
+                            the terms and conditions for each type of account it offers, which are classified in
+                            commonly understood types, such as deposit accounts, credit card accounts, current accounts,
+                            loan accounts or many other types of account. A customer may have more than one account.
+                            Once an account is opened, funds entrusted by the customer to the financial institution on
+                            deposit are recorded in the account designated by the customer. Funds can be withdrawn from
+                            loan loaders.</p>
+                    </div>
+                    <div v-if="accountType=='SAVING'">
+
+                        <h3 class="text-center fw-bolder">Account type Saving</h3>
+                        <p class="text-center pe-4 ps-4 pb-4 pt-2 fw-bold" style="color: #19abd9fe;">Savings accounts
+                            have some limitations on how often you can withdraw funds, but generally offer exceptional
+                            flexibility that’s ideal for building an emergency fund, saving for a short-term goal like
+                            buying a car or going on vacation, or simply sweeping surplus cash you don’t need in your
+                            checking account so it can earn more interest.</p>
+                    </div>
+                    <div v-else-if="accountType=='CURRENT'">
+
+                        <h3 class="text-center fw-bolder">Account type Current</h3>
+                        <p class="text-center pe-4 ps-4 pb-4 pt-2 fw-bold" style="color: #19abd9fe;">It is a
+                            non-interest bearing bank account. It needs a higher minimum balance to be maintained as
+                            compared to the savings account. Penalty is charged if minimum balance is not maintained in
+                            the current account. It charges interest on the short-term funds borrowed from the bank.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" @click="createAccount">Create account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BOOSTRAP -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <!-- VUE -->
+        <script src="https://unpkg.com/vue@3"></script>
+        <!-- AXIOS -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!--CHART GRAPHICS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+        <!-- SWEAT ALERT -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>      
+        <!-- JS -->
+        <script src="./accounts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body style="background-color: rgba(128, 128, 128, 0.836);">
+    <div id="app">
+        <main class="d-flex justify-content-center align-items-center mt-5">
+            <div>
+                <h2 class="text-center fw-bolder" style="color: rgb(255, 166, 43);">Client Manager</h2>
+                <form @submit.prevent="addClient">
+                    <div class="mb-3 m-4">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label fw-bolder"
+                                style="color: rgb(255, 166, 43);">Name:</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" v-model="firstName"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label fw-bolder"
+                                style="color: rgb(255, 166, 43);">Last Name:</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" v-model="lastName"
+                                required>
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label fw-bolder"
+                            style="color: rgb(255, 166, 43);">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            v-model="email" required>
+                    </div>
+                    <button class="btn btn-primary m-4 text-warning fw-bolder ">Add Client</button>
+                </form>
+            </div>
+            <div>
+                <h2 class="text-center fw-bolder" style="color: rgb(255, 166, 43);">Client List</h2>
+                <div class="d-flex justify-content-center">
+                    <table class="text-center m-4 text-light">
+                        <thead>
+                            <tr class="border text-center m-5 fw-bolder text-dark" style="background-color: rgb(255, 166, 43);">
+                                <td class="border">Name</td>
+                                <td class="border">Last Name</td>
+                                <td class="border">Email</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr v-for="client in clients" class="fw-bolder">
+                                <td class="border">{{client.firstName}}</td>
+                                <td class="border">{{client.lastName}}</td>
+                                <td class="border">{{client.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </main>
+        <div class=" d-flex justify-content-center">
+            <a href="./loanCreateByAdmin.html"><button type="button" class="btn btn-primary m-5">Create a new Loan</button></a>
+
+
+
+        </div>
+        <pre class="fw-bold" style="background-color: rgba(128, 128, 128, 0.608);">
+            <h2 class="text-center fw-bolder mt-5" style="color: rgb(255, 166, 43);" >Client Response</h2>
+            {{clients}}
+        </pre>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./manager.js"></script>
+
+</body>
+
+</html>
